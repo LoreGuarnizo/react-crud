@@ -1,9 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import "./header.scss";
 
 const Header = () => {
-
   return (
       <header className="masthead clear">
         <div className="centered">
