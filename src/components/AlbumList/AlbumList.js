@@ -32,12 +32,10 @@ const AlbumList = () => {
 
   const createPost = async (form) => {
     await post(PHOTOS, {...form, albumId: form.id});
-    insertPhotosToAlbum();
   };
 
   const editPost = async (form) => {
     await put(PHOTOS, {...form, id: form.id});
-    insertPhotosToAlbum();
   };
 
   const handleChanges = (action, form) => {
@@ -51,6 +49,8 @@ const AlbumList = () => {
       default:
         break;
     }
+    // Refresh the cards once un update is made
+    insertPhotosToAlbum();
   };
 
   const handleDelete = async () => {
