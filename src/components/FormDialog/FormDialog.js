@@ -15,15 +15,14 @@ const FormDialog = ({ id, open, setOpen, onClick, variantKeyword }) => {
     setForm({ ...form, ...{ [name]: event.target.value } });
   };
 
-  const validateForm = () => {
-    if (form?.title && form?.body) {
-      setValidForm(true);
-    } else {
-      setValidForm(false);
-    }
-  };
-
   useEffect(() => {
+    const validateForm = () => {
+      if (form?.title && form?.body) {
+        setValidForm(true);
+      } else {
+        setValidForm(false);
+      }
+    };
     validateForm();
   }, [form]);
 
